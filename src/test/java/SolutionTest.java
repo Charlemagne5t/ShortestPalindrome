@@ -19,4 +19,21 @@ public class SolutionTest {
 
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void test3() {
+        String s = "abbacd";
+        String expected = "dcabbacd";
+        String actual = new Solution().shortestPalindrome(s);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void test4() {
+        String s = "aabba";
+        String expected = "abbaabba";
+        String actual = new Solution().shortestPalindrome(s);
+
+        Assert.assertEquals(expected, actual);
+    }
+    //
 }
