@@ -4,20 +4,17 @@ import java.util.List;
 
 class Solution {
     public String shortestPalindrome(String s) {
-        if(s.isEmpty()){
+        if (s.isEmpty()) {
             return "";
         }
-
+        StringBuilder sb = new StringBuilder(s).reverse();
         String rev = new StringBuilder(s).reverse().toString();
-        String pattern = s + "#" + rev;
-        KMP kmp = new KMP(pattern);
-
-        StringBuilder sb = new StringBuilder(rev);
-        int i = kmp.lps[pattern.length() - 1];
-        while (i < s.length()){
+        KMP kmp = new KMP( s + "%" + rev);
+        int k = kmp.lps[kmp.lps.length - 1];
+        for(int i = k; i < s.length(); i++) {
             sb.append(s.charAt(i));
-            i++;
         }
+
         return sb.toString();
     }
 }
@@ -36,7 +33,6 @@ class KMP {
 
     public List<Integer> KMPSearch(String text) {
         List<Integer> matches = new ArrayList<>();
-        int m = pattern.length();
         int n = text.length();
 
         int j = 0;

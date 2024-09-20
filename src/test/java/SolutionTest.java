@@ -29,7 +29,7 @@ public class SolutionTest {
     }
     @Test
     public void test4() {
-        String s = "aabba";
+        String s = "aabba";//abbaa
         String expected = "abbaabba";
         String actual = new Solution().shortestPalindrome(s);
 
